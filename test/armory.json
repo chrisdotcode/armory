@@ -1,0 +1,30 @@
+{
+  "architecture": "linuxmint@17.1",
+  "installer": "aptitude install -y",
+  "uninstaller": "aptitude remove --purge",
+  "programs": [
+    {
+      "name": "mmv",
+      "install": {
+        "all": ["#installer mmv", "#installer mmv-doc"]
+      }
+    },
+    {
+      "name": "node",
+      "install": {
+        "linuxmint@17.1": ["#installer nodejs", "#installer nodejs-doc"],
+        "arch": ["#installer node"]
+      }
+    },
+    {
+      "name": "haskell",
+      "install": {
+        "linuxmint@17.1": ["haskell-core"],
+        "arch": ["haskell"],
+        "all": ["haskell-platform"],
+        "all-arch": ["haskell-doc"],
+        "windows8": ["#installer haskell-doc", "#installer haskell-platform"]
+      }
+    }
+  ]
+}
